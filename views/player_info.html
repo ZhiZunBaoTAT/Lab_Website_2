@@ -11,6 +11,40 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="../resources/css/my_style.css" rel="stylesheet">
   </head>
+
+  <script>
+  var players = [{name:"Yao Ming", img: "..https://pixels.com/featured/american-football-running-back-ball-cartoon-aloysius-patrimonio.html", alt:"Image of Player 1", year:"jjknkjnl", major:"Art", games_played: 23, pass_yards: 435, rushing_yards: 200, receiving_yards: 88},
+  				{name:"Lebron James", img: "../resources/img/player2.jpg", alt:"Image of Player 2", year:"Junior", major:"Science", games_played: 17, pass_yards: 192, rushing_yards: 102, receiving_yards: 344},
+  				{name:"Obama", img: "../resources/img/player3.jpg", alt:"Image of Player 3", year:"Freshman", major:"Math", games_played: 8, pass_yards: 35, rushing_yards: 70, receiving_yards: 98}];
+
+    function loadPlayersPage(){
+      var player_list = document.getElementById("player_selector")
+      var player_counter;
+      for(player_counter = 0; player_counter < 3; player_counter++){
+        //var option = player_list.createElement('current_player')
+        var divtag = document.createElement('div')
+        var anchortag = document.createElement('a')
+        anchortag.setAttribute('href',"#")
+        anchortag.setAttribute('onclick',"switchPlayers("+player_counter+")")
+        anchortag.innerText = players[player_counter].name
+        anchortag.setAttribute( 'class', 'dropdown-item' )
+        player_list.appendChild(divtag).appendChild(anchortag)
+        //player_list.add( = <a href="#" onclick="switchPlayers(player_counter)"> players[player_counter].name </a>)
+      }
+    }
+    function switchPlayers(index){
+      document.getElementById('p_year').innerHTML = players[index].year
+      document.getElementById('p_major').innerHTML = players[index].major
+      document.getElementById('g_played').innerHTML = players[index].games_played
+      document.getElementById('p_yards').innerHTML = players[index].pass_yards
+      document.getElementById('avg_p_yards').innerHTML = Math.round(players[index].pass_yards/players[index].games_played);
+      document.getElementById('r_yards').innerHTML = players[index].rushing_yards
+      document.getElementById('avg_r_yards').innerHTML = Math.round(players[index].rushing_yards/players[index].games_played);
+      document.getElementById('rec_yards').innerHTML = Math.round(players[index].receiving_yards);
+      document.getElementById('avg_rec_yards').innerHTML = Math.round(players[index].receiving_yards/players[index].games_played);
+    }
+
+  </script>
   <body onload="loadPlayersPage()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  <a class="navbar-brand" href="home.html">
@@ -54,6 +88,7 @@
 						Select a Player
 					  </button>
 					  <div id="player_selector" class="dropdown-menu" aria-labelledby="selectPlayerButton">
+
 					  </div>
 					</div>
 				  </div>
@@ -92,9 +127,11 @@
 		</div>
 	</div>
 
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<script src="../resources/js/my_scripts.js"></script>
 	</body>
 </html>
+
