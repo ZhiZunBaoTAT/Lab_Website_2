@@ -13,14 +13,15 @@
   </head>
 
   <script>
-  var players = [{name:"John Doe", img: "..https://pixels.com/featured/american-football-running-back-ball-cartoon-aloysius-patrimonio.html", alt:"Image of Player 1", year:"jjknkjnl", major:"Art", games_played: 23, pass_yards: 435, rushing_yards: 200, receiving_yards: 88},
-  				{name:"James Smith", img: "../resources/img/player2.jpg", alt:"Image of Player 2", year:"Junior", major:"Science", games_played: 17, pass_yards: 192, rushing_yards: 102, receiving_yards: 344},
-  				{name:"Robert", img: "../resources/img/player3.jpg", alt:"Image of Player 3", year:"Freshman", major:"Math", games_played: 8, pass_yards: 35, rushing_yards: 70, receiving_yards: 98}];
+ var players = [{name:"John Doe", img: "../resources/img/player1.jpg", alt:"Image of Player 1", year:"Sophomore", major:"Art", games_played: 23, pass_yards: 435, rushing_yards: 200, receiving_yards: 88},
+				{name:"James Smith", img: "../resources/img/player2.jpg", alt:"Image of Player 2", year:"Junior", major:"Science", games_played: 17, pass_yards: 192, rushing_yards: 102, receiving_yards: 344},
+				{name:"Samuel Phillips", img: "../resources/img/player3.jpg", alt:"Image of Player 3", year:"Freshman", major:"Math", games_played: 8, pass_yards: 35, rushing_yards: 70, receiving_yards: 98},
+				{name:"Robert Myers", img: "../resources/img/player4.jpg", alt:"Image of Player 4", year:"Senior", major:"Computer Science", games_played: 31, pass_yards: 802, rushing_yards: 375, receiving_yards: 128}];
 
     function loadPlayersPage(){
       var player_list = document.getElementById("player_selector")
       var player_counter;
-      for(player_counter = 0; player_counter < 3; player_counter++){
+      for(player_counter = 0; player_counter < 4; player_counter++){
         //var option = player_list.createElement('current_player')
         var divtag = document.createElement('div')
         var anchortag = document.createElement('a')
